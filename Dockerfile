@@ -31,5 +31,5 @@ COPY . /app
 # expose VNC port
 EXPOSE 5900
 
-# start the virtual display (Xvfb) display :99 1024x768, fluxbox, the VNC server port 5900, and then the python script.
-CMD ["sh", "-c", "Xvfb :99 -screen 0 1024x768x24 & fluxbox & x11vnc -display :99 -forever -nopw -listen 0.0.0.0 -xkb & export DISPLAY=:99 && python script.py"]
+# start the virtual display (Xvfb) display :99 1024x768, fluxbox, the VNC server port 5900, and then the python script. -ac is to diable .Xauthority authentication for the xvfb. Still create the .Xauthority file tho
+CMD ["sh", "-c", "Xvfb :99 -screen 0 1024x768x24 -ac & fluxbox & x11vnc -display :99 -forever -nopw -listen 0.0.0.0 -xkb & export DISPLAY=:99 && touch /root/.Xauthority && python script.py"]
