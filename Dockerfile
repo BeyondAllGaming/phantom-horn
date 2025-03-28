@@ -2,11 +2,13 @@
 FROM python:3.9-slim
 
 # install software
-# - firefox-esr: browser (will add geckodriver extension below)
+# - firefox-esr: browser
 # - xvfb: virtual display server
 # - x11vnc: VNC server for viewing the display
 # - fluxbox: window manager
+# - wget: to fetch geckodriver from github
 RUN apt-get update && apt-get install -y \
+    wget \
     firefox-esr \
     xvfb \
     x11vnc \
@@ -30,4 +32,4 @@ COPY . /app
 EXPOSE 5900
 
 # start the virtual display (Xvfb) display :99 1024x768, fluxbox, the VNC server port 5900, and then the python script.
-CMD ["sh", "-c", "Xvfb :99 -screen 0 1024x768x24 & fluxbox & x11vnc -display :99 -forever -nopw -listen 0.0.0.0 -xkb & export DISPLAY=:99 && python discord-auto-poster.py"]
+CMD ["sh", "-c", "Xvfb :99 -screen 0 1024x768x24 & fluxbox & x11vnc -display :99 -forever -nopw -listen 0.0.0.0 -xkb & export DISPLAY=:99 && python script.py"]
