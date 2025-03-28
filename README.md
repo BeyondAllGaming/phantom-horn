@@ -35,3 +35,9 @@ This maps host port 5910 to the container’s port 5900 (the port that the virtu
 
 #### 4. Connect via VNC
 Use whatever VNC client you have (I use tightVNC) and connect to localhost:<host_port> like localhost:5910
+
+#### 5. To kill the container (it will delete itself automatically after)
+```
+docker ps
+docker stop <container_id>
+```
