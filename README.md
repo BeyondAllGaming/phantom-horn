@@ -30,7 +30,7 @@ Navigate to the phantom-horn directory and build the image:
 
 #### 3. Run the Application
 Run the container with port mapping and automatic removal after exit:
-`docker run --rm -p 5910:5900 phantom-horn-app`
+`docker run --rm --name phantom-horn-container1 -p 5910:5900 phantom-horn-app`
 This maps host port 5910 to the container’s port 5900 (the port that the virtual display server uses).
 
 #### 4. Connect via VNC
