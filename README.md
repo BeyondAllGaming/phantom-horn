@@ -2,6 +2,8 @@
 
 Phantom Horn is a Dockerized application that sets up a virtual display server (Xvfb) along with Firefox (using geckodriver) to enable Python browser automation with Selenium and PyAutoGUI. You could probably just replace the python script with whatever you would need it for but yea.
 
+The original goal of this project was to have a bot that spawns and posts a message in places where I needed it but I wanted something ephemeral, light, and portable. Also flexbility where the environment is consistent and I just have to focus my time on developing the scripts that use the environment.
+
 ## Features
 
 - **Dockerized Environment:** Portablity
