@@ -21,17 +21,17 @@ The original goal of this project was to have a bot that spawns and posts a mess
 ### To Run Phantom Horn
 
 #### 1. Authenticate with Docker (if needed)
-This ensures you have access to pull the required base images.
+This ensures you have access to pull the required base images.  
 `docker login`
 
 #### 2. Build the Docker Image
-Navigate to the phantom-horn directory and build the image:
+Navigate to the phantom-horn directory and build the image:  
 `docker build -t phantom-horn-app`
 
 #### 3. Run the Application
-Run the container with port mapping and automatic removal after exit:
+Run the container with port mapping and automatic removal after exit:  
+This maps host port 5910 to the container’s port 5900 (the port that the virtual display server uses).  
 `docker run --rm --name phantom-horn-container1 -p 5910:5900 phantom-horn-app`
-This maps host port 5910 to the container’s port 5900 (the port that the virtual display server uses).
 
 #### 4. Connect via VNC
 Use whatever VNC client you have (I use tightVNC) and connect to localhost:<host_port> like localhost:5910
