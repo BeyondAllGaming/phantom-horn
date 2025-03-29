@@ -23,11 +23,12 @@ def main():
     # Print the title of the page to confirm it's loaded
     print("Page title:", driver.title)
 
-    # Wait indefinitely until you press Enter
-    input("Press Enter to exit and close the browser...")
-
-    # Close the browser
-    driver.quit()
+    # Wait until keypress to exit
+    try:
+        while True:
+            time.sleep(60)
+    except KeyboardInterrupt:
+        driver.quit()
 
 
 if __name__ == "__main__":
